@@ -1,0 +1,4 @@
+[org/gnome/gedit/preferences/editor]
+scheme='solarized-dark'
+use-default-font=true
+wrap-last-split-mode='word'
