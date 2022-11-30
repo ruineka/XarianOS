@@ -110,10 +110,15 @@ export PACKAGES="\
 	steamtinkerlaunch \
 	vlc \
 	gnome-browser-connector \
+	btrfs-progs \
+	syslinux \
+	parted \
+	libnewt \
+	dosfstools \
+	util-linux \
 "
 
 export AUR_PACKAGES="\
-	frzr \
 	python-inotify-simple \
 	gamescope-git \
 	gamescope-session-git \
