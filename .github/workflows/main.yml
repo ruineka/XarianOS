@@ -1,0 +1,40 @@
+name: System image build
+on:
+  push:
+    branches:
+    - 'master'
+jobs:
+  build:
+    name: System image build
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.build_image.outputs.version }}
+      display_name: ${{ steps.build_image.outputs.display_name }}
+      display_version: ${{ steps.build_image.outputs.display_version }}
+      image_filename: ${{ steps.build_image.outputs.image_filename }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Change directory
+        run: cd $GITHUB_WORKSPACE
+      - name: Obtain base docker image
+        run: docker pull archlinux:latest
+      - name: Create docker build image
+        run: docker build --no-cache -t image-builder:latest .
+      - name: Build system image
+        id: build_image
+        run: docker run --rm -v $(pwd):/workdir -v $(pwd)/output:/output -v $GITHUB_OUTPUT:$GITHUB_OUTPUT -e "GITHUB_OUTPUT=$GITHUB_OUTPUT" --privileged=true image-builder:latest $(echo ${GITHUB_SHA} | cut -c1-7)
+
+      - name: Create release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: ${{ steps.build_image.outputs.version }}
+          name: ${{ steps.build_image.outputs.display_name }} ${{ steps.build_image.outputs.display_version }} [UNSTABLE]
+          draft: false
+          prerelease: true
+          fail_on_unmatched_files: true
+          files: |
+            output/${{ steps.build_image.outputs.image_filename }}
+            output/build_info.txt
+            output/sha256sum.txt
