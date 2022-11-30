@@ -127,7 +127,6 @@ export AUR_PACKAGES="\
 	xpadneo-dkms \
 	nintendo-udev \
 	steam-removable-media-git \
-	rz608-fix-git \
 	handygccs-git \
 	mangoapp \
 	asusctl \
