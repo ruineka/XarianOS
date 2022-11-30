@@ -2,7 +2,7 @@
  "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
  "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 <policyconfig>
-  <action id="org.chimeraos.steamvr.pkexec">
+  <action id="org.xarianos.steamvr.pkexec">
     <message>Authentication is required to change steamvr compositor capabilities</message>
     <defaults>
       <allow_any>no</allow_any>
@@ -11,6 +11,6 @@
     </defaults>
     <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/setcap</annotate>
     <annotate key="org.freedesktop.policykit.exec.argv1">CAP_SYS_NICE=eip</annotate>
-    <annotate key="org.freedesktop.policykit.exec.argv2">/home/gamer/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher</annotate>
+    <annotate key="org.freedesktop.policykit.exec.argv2">/home/xarian/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher</annotate>
   </action>
 </policyconfig>

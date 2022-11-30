@@ -233,8 +233,6 @@ main() {
 
 	rm -f ${MOUNT_PATH}/*.img.*
 
-	rm -rf /var/lib/pacman # undo frzr-unlock
-
 	echo "deployment complete; restart to boot into ${NAME}"
 
 	if command -v frzr-postupdate-script > /dev/null; then
