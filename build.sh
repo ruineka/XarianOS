@@ -164,10 +164,6 @@ echo "${USERNAME} ALL=(ALL) NOPASSWD: /usr/lib/media-support/format-media.sh*
 # set the default editor, so visudo works
 echo "export EDITOR=/usr/bin/vim" >> /etc/bash.bashrc
 
-echo "[Seat:*]
-autologin-user=${USERNAME}
-" > /etc/lightdm/lightdm.conf.d/00-autologin-user.conf
-
 echo "${SYSTEM_NAME}" > /etc/hostname
 
 # enable multicast dns in avahi
