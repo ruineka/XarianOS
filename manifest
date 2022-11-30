@@ -1,6 +1,6 @@
 #! /bin/bash
 
-export VERSION="1.0"
+export VERSION="1"
 export SYSTEM_DESC="XarianOS"
 export SYSTEM_NAME="xarianos"
 export SYSTEM_CODENAME="Merabi"
