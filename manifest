@@ -129,7 +129,6 @@ export AUR_PACKAGES="\
 	steam-removable-media-git \
 	handygccs-git \
 	mangoapp \
-	asusctl \
 	python-vdf \
 "
 
