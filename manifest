@@ -94,7 +94,6 @@ export PACKAGES="\
 	dmidecode \
 	firefox \
 	git \
-	edid-decode-git \
 	zenity \
 	jre-openjdk \
 	fuse \
@@ -104,9 +103,7 @@ export PACKAGES="\
 	obs-studio \
 	jq \
 	libreoffice \
-	steamtinkerlaunch \
 	vlc \
-	gnome-browser-connector \
 	btrfs-progs \
 	syslinux \
 	parted \
