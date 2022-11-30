@@ -14,7 +14,7 @@ export BUG_REPORT_URL=""
 export KERNEL_PACKAGE="linux-ruineka"
 
 export PACKAGES="\
-	gnome
+	gnome \
 	amd-ucode \
 	intel-ucode \
 	htop \
