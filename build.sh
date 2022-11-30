@@ -116,19 +116,7 @@ Include = /etc/pacman.d/mirrorlist
 # update package databases
 pacman --noconfirm -Syy
 
-# Using Ruineka Kernel.
-pacman --noconfirm -U https://github.com/ruineka/linux/releases/download/v6.1-RC3-Ruineka/linux-ruineka-6.1rc3-1-x86_64.pkg.tar.zst
-
-pacman --noconfirm -U https://github.com/ruineka/linux/releases/download/v6.1-RC3-Ruineka/linux-ruineka-headers-6.1rc3-1-x86_64.pkg.tar.zst
-
-pacman --noconfirm -U https://github.com/ruineka/linux/releases/download/v6.1-RC3-Ruineka/linux-ruineka-docs-6.1rc3-1-x86_64.pkg.tar.zst
-
-# install custom patched mesa for Intel
-pacman --noconfirm -U https://github.com/ruineka/mesa/releases/download/22.2.2/mesa-git-22.2.2-1-x86_64.pkg.tar.zst
-
-pacman --noconfirm -U https://github.com/ruineka/mesa/releases/download/22.2.2/lib32-mesa-git-22.2.2-1-x86_64.pkg.tar.zst
-
-#pacman --noconfirm -S "${KERNEL_PACKAGE}" "${KERNEL_PACKAGE}-headers"
+pacman --noconfirm -S "${KERNEL_PACKAGE}" "${KERNEL_PACKAGE}-headers"
 
 # install packages
 pacman --noconfirm -S --overwrite '*' ${PACKAGES}
