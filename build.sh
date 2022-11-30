@@ -80,14 +80,9 @@ fi
 # copy files into chroot
 cp -R manifest rootfs/. ${BUILD_PATH}/
 
-# add chaotic-aur and copy keys into chroot
-pacman-key --init
-pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
-pacman-key --lsign-key FBA220DFC880C036
 # add miffe repo and keys
 pacman-key --recv-keys 313F5ABD
 pacman-key --lsign-key 313F5ABD
-pacman --noconfirm -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-'{keyring,mirrorlist}'.pkg.tar.zst'
 rm -rf ${BUILD_PATH}/etc/pacman.d
 cp -R /etc/pacman.d ${BUILD_PATH}/etc/
 
@@ -115,13 +110,10 @@ sed -i '/ParallelDownloads/s/^#//g' /etc/pacman.conf
 # Disable signature checking
 sed -i 's/Required DatabaseOptional/Never/g' /etc/pacman.conf
 
-# add multilib and chaotic-aur repos
+# add multilib and miffe
 echo '
 [multilib]
 Include = /etc/pacman.d/mirrorlist
-
-[chaotic-aur]
-Include = /etc/pacman.d/chaotic-mirrorlist
 
 [miffe]
 Server = http://arch.miffe.org/x86_64/

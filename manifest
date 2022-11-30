@@ -18,7 +18,6 @@ export PACKAGES="\
 	amd-ucode \
 	intel-ucode \
 	htop \
-	gdm \
 	accountsservice \
 	xorg \
 	bluez \
@@ -36,8 +35,6 @@ export PACKAGES="\
 	pipewire-pulse \
 	pipewire-jack \
 	gst-plugin-pipewire \
-	xdg-desktop-portal \
-	xdg-desktop-portal-wlr \
 	alsa-utils \
 	alsa-firmware \
 	sof-firmware \
