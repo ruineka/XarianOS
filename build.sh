@@ -80,9 +80,6 @@ fi
 # copy files into chroot
 cp -R manifest rootfs/. ${BUILD_PATH}/
 
-# add miffe repo and keys
-pacman-key --recv-keys 313F5ABD
-pacman-key --lsign-key 313F5ABD
 rm -rf ${BUILD_PATH}/etc/pacman.d
 cp -R /etc/pacman.d ${BUILD_PATH}/etc/
 
@@ -110,13 +107,10 @@ sed -i '/ParallelDownloads/s/^#//g' /etc/pacman.conf
 # Disable signature checking
 sed -i 's/Required DatabaseOptional/Never/g' /etc/pacman.conf
 
-# add multilib and miffe
+# add multilib
 echo '
 [multilib]
 Include = /etc/pacman.d/mirrorlist
-
-[miffe]
-Server = http://arch.miffe.org/x86_64/
 ' >> /etc/pacman.conf
 
 # update package databases
