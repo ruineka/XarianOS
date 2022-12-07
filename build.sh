@@ -252,7 +252,7 @@ cat ${BUILD_PATH}/manifest >> ${BUILD_PATH}/build_info
 rm ${BUILD_PATH}/manifest
 
 # freeze archive date of build to avoid package drift on unlock
-export TODAY_DATE=$(date +%Y/%M/%d)
+export TODAY_DATE=$(date +%Y/%m/%d)
 echo "Server=https://archive.archlinux.org/repos/${TODAY_DATE}/\$repo/os/\$arch" > \
 ${BUILD_PATH}/etc/pacman.d/mirrorlist
 
