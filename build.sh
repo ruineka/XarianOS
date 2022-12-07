@@ -48,6 +48,14 @@ mkfs.btrfs -f ${BUILD_IMG}
 mount -t btrfs -o loop,nodatacow ${BUILD_IMG} ${MOUNT_PATH}
 btrfs subvolume create ${BUILD_PATH}
 
+# set archive date if specified
+if [ -n "${ARCHIVE_DATE}" ]; then
+	echo "
+	Server=https://archive.archlinux.org/repos/${ARCHIVE_DATE}/\$repo/os/\$arch
+	" > /etc/pacman.d/mirrorlist
+	pacman -Syyuu --noconfirm
+fi
+
 # bootstrap
 pacstrap ${BUILD_PATH} base
 
@@ -242,6 +250,13 @@ echo "${SYSTEM_NAME}-${VERSION}" > ${BUILD_PATH}/build_info
 echo "" >> ${BUILD_PATH}/build_info
 cat ${BUILD_PATH}/manifest >> ${BUILD_PATH}/build_info
 rm ${BUILD_PATH}/manifest
+
+# freeze archive date of build to avoid package drift on unlock
+export TODAY_DATE=$(date +%Y/%M/%d)
+echo "Server=https://archive.archlinux.org/repos/${TODAY_DATE}/\$repo/os/\$arch" > \
+${BUILD_PATH}/etc/pacman.d/mirrorlist
+
+cat ${BUILD_PATH}/etc/pacman.d/mirrorlist
 
 btrfs subvolume snapshot -r ${BUILD_PATH} ${SNAP_PATH}
 btrfs send -f ${SYSTEM_NAME}-${VERSION}.img ${SNAP_PATH}
