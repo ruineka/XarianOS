@@ -111,6 +111,7 @@ export PACKAGES="\
 	libnewt \
 	dosfstools \
 	util-linux \
+	steam \
 "
 
 export AUR_PACKAGES="\
