@@ -116,7 +116,7 @@ export PACKAGES="\
 
 export AUR_PACKAGES="\
 	python-inotify-simple \
-	gamescope-git \
+	gamescope-plus \
 	gamescope-session-git \
 	xone-dkms \
 	xpad-noone-dkms \
