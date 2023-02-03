@@ -11,7 +11,7 @@ export SIZE="15000MB"
 export WEBSITE=""
 export DOCUMENTATION_URL=""
 export BUG_REPORT_URL=""
-export KERNEL_PACKAGE="linux"
+export KERNEL_PACKAGE="linux-zen"
 
 export PACKAGES="\
 	gnome \
@@ -126,6 +126,8 @@ export AUR_PACKAGES="\
 	handygccs-git \
 	mangoapp \
 	python-vdf \
+	anbox-modules-dkms-git \
+	waydroid \
 "
 
 export EARLY_AUR_PACKAGES="\
