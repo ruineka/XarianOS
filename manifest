@@ -11,7 +11,7 @@ export SIZE="15000MB"
 export WEBSITE=""
 export DOCUMENTATION_URL=""
 export BUG_REPORT_URL=""
-export KERNEL_PACKAGE="linux-zen"
+export KERNEL_PACKAGE="linux"
 
 export PACKAGES="\
 	gnome \
