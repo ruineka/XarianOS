@@ -118,7 +118,6 @@ export AUR_PACKAGES="\
 	xpad-noone-dkms \
 	xpadneo-dkms \
 	nintendo-udev \
-	steam-removable-media-git \
 	handygccs-git \
 	mangoapp \
 	python-vdf \
