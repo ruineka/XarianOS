@@ -118,6 +118,7 @@ export AUR_PACKAGES="\
 	python-inotify-simple \
 	gamescope-plus \
 	gamescope-session-git \
+	steam-removable-media-git \
 	xone-dkms \
 	xpad-noone-dkms \
 	xpadneo-dkms \
